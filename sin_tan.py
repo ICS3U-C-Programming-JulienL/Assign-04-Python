@@ -28,21 +28,22 @@ def main():
                 sin_tan_product = math.sin(counter)
 
                 # display the sin product
-                print("sin {0} = {1}".format(counter, sin_tan_product))
+                print("sin {0} = {1:,.2f}".format(counter, sin_tan_product))
 
                 # increment the counter
                 counter = counter + 1
         elif user_table_choice_int == 2:
-            # otherwise if the choice is 2, then use a while loop to find the tan table
-            while counter <= 360:
+            # otherwise if the choice is 2, then use a for loop to find the tan table
+            for counter in range(0, 361):
                 # calculate the tan of the counter
                 sin_tan_product = math.tan(counter)
 
                 # display the tan product
-                print("tan {0} = {1}".format(counter, sin_tan_product))
-
-                # increment the counter
-                counter = counter + 1
+                print(
+                    "tan {0} radians = {1:,.2f}".format(
+                        round(counter, 2), sin_tan_product
+                    )
+                )
         else:
             # otherwise, tell them to enter 1 or 2
             print(" Please enter 1 or 2 for your table choice.")
